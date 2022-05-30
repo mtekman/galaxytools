@@ -87,7 +87,7 @@ saveRDS(sub_eset, file= '$out_eset')
         </configfile>
     </configfiles>
     <inputs>
-        <param name="rds_eset" label="Expression Set Dataset" type="data" format="@RDATATYPE@" />
+        <param name="rds_eset" label="Expression Set Dataset" type="data" format="@RDATATYPE-IN@" />
         <conditional name="combine_eset" >
             <param name="do" type="select" label="Concatenate other Expression Set objects?"
                    help="Phenotype data must match between objects, and objects will be concatenated in the order given below." >
@@ -97,7 +97,7 @@ saveRDS(sub_eset, file= '$out_eset')
             <when value="No" ></when>
             <when value="Yes" >
                 <repeat name="eset_group" title="Additional Dataset" min="1" >
-                    <param name="eset" label="Expression Set Dataset" type="data" format="@RDATATYPE@" />
+                    <param name="eset" label="Expression Set Dataset" type="data" format="@RDATATYPE-IN@" />
                 </repeat>
             </when>
         </conditional>
@@ -156,7 +156,7 @@ saveRDS(sub_eset, file= '$out_eset')
         </conditional>
     </inputs>
     <outputs>
-        <data name="out_eset" format="@RDATATYPE@" label="${tool.name} on ${on_string}: ExpressionSet Object" />
+        <data name="out_eset" format="@RDATATYPE-OUT@" label="${tool.name} on ${on_string}: ExpressionSet Object" />
     </outputs>
     <tests>
         <test expect_num_outputs="1" >

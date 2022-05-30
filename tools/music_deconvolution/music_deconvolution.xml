@@ -81,8 +81,8 @@ outfile_tab='$out_tab'
         </configfile>
     </configfiles>
     <inputs>
-        <param name="scrna_eset" label="scRNA Dataset" type="data" format="@RDATATYPE@" />
-        <param name="bulk_eset" label="Bulk RNA Dataset" type="data" format="@RDATATYPE@" />
+        <param name="scrna_eset" label="scRNA Dataset" type="data" format="@RDATATYPE-IN@" />
+        <param name="bulk_eset" label="Bulk RNA Dataset" type="data" format="@RDATATYPE-IN@" />
         <conditional name="do" >
             <param name="method" type="select" label="Purpose" >
                 <!-- The values here correspond to script names in the scripts folder

@@ -96,7 +96,7 @@ out_heatsumm_pdf = '$out_heatsumm_pdf'
                       type proportions across all groups." >
             <!-- Single Cell Options -->
             <param name="name" label="Name of scRNA Dataset" type="text" value="" />
-            <param name="scrna_eset" label="scRNA Dataset" type="data" format="@RDATATYPE@" />
+            <param name="scrna_eset" label="scRNA Dataset" type="data" format="@RDATATYPE-IN@" />
             <section name="adv" title="Advanced scRNA Parameters" >
                 <param name="celltypes_label" type="text" value="cellType"
                        label="Cell Types Label from scRNA dataset" >
@@ -112,7 +112,7 @@ out_heatsumm_pdf = '$out_heatsumm_pdf'
                     help="Choose bulk RNA datasets" >
                 <!-- Bulk Options -->
                 <param name="name" label="Name of Bulk Dataset" type="text" value="" />
-                <param name="bulk_eset" label="Bulk RNA Dataset" type="data" format="@RDATATYPE@" />
+                <param name="bulk_eset" label="Bulk RNA Dataset" type="data" format="@RDATATYPE-IN@" />
                 <param name="factor_group" type="text" label="Factor Name" optional="false"
                        help="Name of column in phenotype data containing factor values. If column does not exist, it is a new factor that is applied to all samples in the dataset. Plots will be coloured by these factors." />
                 <section name="adv" title="Advanced Bulk Parameters" >

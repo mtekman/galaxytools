@@ -56,7 +56,7 @@ print(rds_eset)
         </configfile>
     </configfiles>
     <inputs>
-        <param name="rds_eset" label="ESet Dataset" type="data" format="@RDATATYPE@" />
+        <param name="rds_eset" label="ESet Dataset" type="data" format="@RDATATYPE-IN@" />
         <param name="inspector" label="Inspect" type="select"
                help="Inspect an aspect of the ESet dataset" >
             <!-- See: https://www.rdocumentation.org/packages/Biobase/versions/2.32.0/topics/eSet -->
