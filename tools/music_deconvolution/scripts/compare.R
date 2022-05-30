@@ -449,9 +449,15 @@ dev.off()
 
 ## Generate output tables
 stats_prop <- lapply(grudat$spread$prop, function(x) {
-    t(apply(x, 1, summary))})
+    res1 <- apply(x, 1, summary)
+    res2 <- apply(x, 1, sd)
+    return(t(rbind(res1, sd=res2)))
+})
 stats_scale <- lapply(grudat$spread$scale, function(x) {
-    t(apply(x, 1, summary))})
+    res1 <- apply(x, 1, summary)
+    res2 <- apply(x, 1, sd)
+    return(t(rbind(res1, sd=res2)))
+})
 
 ## Make the value table printable
 grudat_spread_melt$value.scale <- as.integer(grudat_spread_melt$value.scale) # nolint
@@ -465,6 +471,6 @@ writable2({
 }, "values", "Matrix of Cell Type Read Counts")
 
 for (bname in names(stats_prop)) {
-    writable2(stats_prop[[bname]], "stats", paste0(bname, ": Sample Props"))
-    writable2(stats_scale[[bname]], "stats", paste0(bname, ": Read Props"))
+    writable2(formatC(stats_prop[[bname]], digits=3, format="g"), "stats", paste0(bname, ": Sample Props"))
+    writable2(formatC(stats_scale[[bname]], digits=3, format="f"), "stats", paste0(bname, ": Read Props"))
 }
